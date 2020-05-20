@@ -30,6 +30,9 @@ $(document).ready(()=>{
 	$("#save_button").click(saveConfig);
 });
 
+/**
+* @brief Saves configuration to .json file using save_json.php script
+*/
 function saveConfig() {
 
     var json_to_save = {

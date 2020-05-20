@@ -3,7 +3,8 @@ var sampleTimeMsec = 1000 * sampleTimeSec;	///< sample time in msec
 var maxSamplesNumber = 100;				///< maximum number of samples
 
 var xdata; ///< x-axis labels array: time stamps
-var ydata; ///< 2D y-axis data array: roll, pitch and yaw
+var ydata; ///< 2D y-axis data array
+var default_labels; ///< dafault labels array
 var lastTimeStamp; ///< most recent time stamp
 
 var chartContext;  ///< chart context i.e. object that "owns" chart
@@ -17,20 +18,20 @@ var port;
 
 /**
 * @brief Add new values to next data point.
-* @param r New y-axis roll value
-* @param p New y-axis pitch value
-* @param y New y-axis yaw value
+* @param d1 New y-axis value eg. roll
+* @param d2 New y-axis value eg. pitch
+* @param d3 New y-axis value eg. yaw
 */
-function addData(r, p, y){
+function addData(d1, d2, d3){
 	if(ydata[0].length > maxSamplesNumber)
 	{
 		removeOldData();
 		lastTimeStamp += sampleTimeSec;
 		xdata.push(lastTimeStamp.toFixed(4));
 	}
-	ydata[0].push(r);
-    ydata[1].push(p);
-    ydata[2].push(y);
+	ydata[0].push(d1);
+    ydata[1].push(d2);
+    ydata[2].push(d3);
 	chart.update();
 }
 
@@ -67,7 +68,12 @@ function ajaxJSON() {
         url: url,
 		type: 'GET', dataType: 'json',
 		success: function(responseJSON, status, xhr) {
-			addData(+responseJSON.roll, +responseJSON.pitch, +responseJSON.yaw);
+			// assign names and units to labels
+			for (var i=0; i<3; i++) {
+				chart.data.datasets[i].label = responseJSON[i].name.concat(" [", responseJSON[i].unit, "]");
+			}
+			// add data to graph
+			addData(+responseJSON[0].value, +responseJSON[1].value, +responseJSON[2].value);
 		}
 	});
 }
@@ -88,6 +94,9 @@ function chartInit()
 	// empty array
 	ydata = new Array(3);
 
+	// defalut labels array
+	default_labels = ["roll [deg]", "pitch [deg]", "yaw [deg]"];
+
 	// get chart context from 'canvas' element
 	chartContext = $("#chart")[0].getContext('2d');
 
@@ -100,7 +109,7 @@ function chartInit()
 			labels: xdata,
 			datasets: [{
 				fill: false,
-				label: 'Roll',
+				label: default_labels[0],
 				backgroundColor: 'rgb(255, 0, 0)',
 				borderColor: 'rgb(255, 0, 0)',
 				data: ydata[0],
@@ -108,7 +117,7 @@ function chartInit()
 			},
             {
 				fill: false,
-				label: 'Pitch',
+				label: default_labels[1],
 				backgroundColor: 'rgb(0, 0, 255)',
 				borderColor: 'rgb(0, 0, 255)',
 				data: ydata[1],
@@ -116,7 +125,7 @@ function chartInit()
 			},
             {
 				fill: false,
-				label: 'Yaw',
+				label: default_labels[2],
 				backgroundColor: 'rgb(255, 255, 0)',
 				borderColor: 'rgb(255, 255, 0)',
 				data: ydata[2],
