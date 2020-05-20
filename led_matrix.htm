@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- HTML file head: web page metadata -->
+	<head>
+		<title>LED Matrix</title>
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+		<!-- Chart.js library -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+		<script type="text/javascript" src="scripts/led_matrix.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/led_matrix_css.css">
+	</head>
+
+	<!-- HTML file body: web page content -->
+	<body>
+		<h1 class="text-center">LED Matrix</h1>
+
+		<div id="in" class="container border border-primary rounded frame">
+			<b>Set color:</b>
+			<br>
+			<div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">R:</div></li>
+					<li><input id="red" type="text" size="3"></input></li>
+					<li><div class="menuitem">G:</div></li>
+					<li><input id="green" type="text" size="3"></input></li>
+					<li><div class="menuitem">B:</div></li>
+					<li><input id="blue" type="text" size="3"></input></li>
+				</ul>
+			</div>
+			<br>
+			<b>Set pixel:</b>
+			<br>
+			<div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">X:</div></li>
+					<li><input id="x" type="text" size="1"></input></li>
+					<li><div class="menuitem">Y:</div></li>
+					<li><input id="y" type="text" size="1"></input></li>
+					<li><div class="menuitem extrabuttonmargin"><button id="set_pixel" type="button" class="btn btn-primary">SEND</button></div></li>
+				</ul>
+			</div>
+			<br>
+			<b>Display text:</b>
+			<br>
+			<div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">Text:</div></li>
+					<li><input id="text_to_display" type="text" size="40"></input></li>
+					<li><div class="menuitem extrabuttonmargin"><button id="display_text" type="button" class="btn btn-primary">SEND</button></div></li>
+				</ul>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+	<!-- HTML file head: web page metadata -->
+	<head>
+        <meta charset="UTF-8">
+		<title>LED Matrix</title>
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+		<!-- Chart.js library -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+		<script type="text/javascript" src="scripts/config.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/config.css">
+	</head>
+
+	<!-- HTML file body: web page content -->
+	<body>
+		<h1 class="text-center">Configuration</h1>
+
+        <div id="in" class="container border border-primary rounded frame">
+			<div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">Server IP:</div></li>
+					<li><div class="menuitem"><input id="ip_serwera" type="text" size="15"></input></div></li>
+				</ul>
+			</div>
+            <div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">Port:</div></li>
+					<li><div class="menuitem"><input id="port" type="text" size="5"></input></div></li>
+				</ul>
+			</div>
+            <div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">Sampling time:</div></li>
+					<li><div class="menuitem"><input id="okres" type="number" size="5"></input></div></li>
+                    <li><div class="menuitem">ms</div></li>
+				</ul>
+			</div>
+            <div id="pixel" class="container border border-primary rounded list">
+				<ul class="nav">
+					<li><div class="menuitem">Max samples on the graph:</div></li>
+					<li><div class="menuitem"><input id="pamiec" type="number" size="5"></input></div></li>
+                    <li><div class="menuitem extrabuttonmargin"><button id="save_button" type="button" class="btn btn-primary">SAVE</button></div></li>
+				</ul>
+			</div>
+		</div>
+
+	</body>
+</html>
