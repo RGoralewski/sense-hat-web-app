@@ -63,7 +63,7 @@ function stopTimer(){
 * @brief Send HTTP GET request to IoT server
 */
 function ajaxJSON() {
-	var url = 'http://'.concat(ipAddress, ':', port, '/cgi-bin/response_imu_json.py');
+	var url = 'http://'.concat(ipAddress, ':', port, '/sensors_via_deamon.php?id=rpy');
 	$.ajax({
         url: url,
 		type: 'GET', dataType: 'json',
