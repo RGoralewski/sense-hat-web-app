@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Table</title>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script defer type="text/javascript" src="scripts/data_table.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/data_table_css.css">
+</head>
+
+<body>
+
+    <h1 class="text-center">Data Table</h1>
+    <div id="datagraph" class="container border border-primary rounded datagraph">
+        <ul class="nav">
+            <li><button id="start" type="button" class="btn btn-primary menuitem">Start</button></li>
+            <li><button id="stop" type="button" class="btn btn-primary menuitem">Stop</button></li>
+            <li>
+                <div class="border border-primary rounded menuitem"><span>Sample time: <span id="sampletime"></span>
+                        ms</span></div>
+            </li>
+        </ul>
+        <div>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Data name</th>
+                        <th>Data read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="txt1">Temperature [℃]</td>
+                        <td id="temp"></td>
+                    </tr>
+                    <tr>
+                        <td id="txt2">Humidity [g/m³]</td>
+                        <td id="humid"></td>
+                    </tr>
+                    <tr>
+                        <td id="txt3">Pressure [hPa]</td>
+                        <td id="press"></td>
+                    </tr>
+                    <tr>
+                        <td id="txt4">Roll [deg]</td>
+                        <td id="roll"></td>
+                    </tr>
+                    <tr>
+                        <td id="txt5">Pitch [deg]</td>
+                        <td id="pitch"></td>
+                    </tr>
+                    <tr>
+                        <td id="txt6">Yaw [deg]</td>
+                        <td id="yaw"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

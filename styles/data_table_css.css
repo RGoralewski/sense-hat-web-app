@@ -1,0 +1,27 @@
+.datagraph {
+    width: 1000px;
+    padding: 5px;
+}
+
+.menuitem {
+    height: 40px;
+    margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+td {
+    border: 1px solid black;
+    width: 500px;
+    height: 40px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+    
+}
