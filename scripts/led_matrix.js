@@ -43,7 +43,7 @@ function sendPixel() {
 	/// Send request
 	$.ajax( url,
 	{
-		type : 'GET',
+		type : 'POST',
         data : { // data to send
             r : $("#red").val(),
             g : $("#green").val(),
@@ -63,7 +63,7 @@ function sendText() {
 	/// Send request
 	$.ajax( url,
 	{
-		type : 'GET',
+		type : 'POST',
         data : { // data to send
             r : $("#red").val(),
             g : $("#green").val(),
